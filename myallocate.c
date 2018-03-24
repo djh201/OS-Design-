@@ -62,8 +62,19 @@ void myMalloc(size_t sizeBits,RequestType){
     }
 
 }
-void mydeallocate(void *ptr){
 
+void merge() { //to help elimatante space, merge consective free blocks of data
+    struct block *current, *prev;
+    current = blocklist;
+
+    while((current->next)!= NULL){
+
+        if(current->free.equals(1''))
+    }
+
+
+}
+void mydeallocate(void *ptr){
     if(((void *)memory <=ptr)&&(ptr<=(void*)memory+BLOCK_SIZE)){
 
         struct block *current = ptr;
@@ -71,8 +82,6 @@ void mydeallocate(void *ptr){
         current->free =1;
 
     }
-
-
 }
 
 
